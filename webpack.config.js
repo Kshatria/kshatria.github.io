@@ -90,7 +90,7 @@ module.exports = (_, args) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './app.html',
+        template: './index.html',
         favicon: '../static/favicon.svg',
       }),
       new CleanWebpackPlugin(),
