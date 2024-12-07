@@ -35,7 +35,7 @@ module.exports = (_, args) => {
     output: {
       path: dist,
       publicPath:
-        args.mode === 'development' ? `http://${host}:${port}/` : 'https://kshatria.github.io/react-start-template/',
+        args.mode === 'development' ? `http://${host}:${port}/` : 'https://kshatria.github.io/kshatria.gihub.io/',
       filename: `js/[name].js`,
       chunkFilename: `js/[name].js`,
     },
