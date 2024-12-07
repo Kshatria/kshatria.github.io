@@ -35,7 +35,7 @@ module.exports = (_, args) => {
     output: {
       path: build,
       publicPath:
-        args.mode === 'development' ? `http://${host}:${port}/` : 'https://kshatria.github.io/kshatria.gihub.io/',
+        args.mode === 'development' ? `http://${host}:${port}/` : 'https://kshatria.github.io/',
       filename: `js/[name].js`,
       chunkFilename: `js/[name].js`,
     },
