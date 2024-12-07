@@ -90,7 +90,8 @@ module.exports = (_, args) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: '../index.html',
+				title: 'Учебный проект khatria.github.io',
+        template: './index.html',
         favicon: '../static/favicon.svg',
       }),
       new CleanWebpackPlugin(),
