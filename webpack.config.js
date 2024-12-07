@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const port = 2233;
-const dist = path.join(__dirname, 'dist');
+const build = path.join(__dirname, 'build');
 const src = path.join(__dirname, 'src');
 const host = 'localhost';
 
@@ -33,7 +33,7 @@ module.exports = (_, args) => {
 
     entry: './app.tsx',
     output: {
-      path: dist,
+      path: build,
       publicPath:
         args.mode === 'development' ? `http://${host}:${port}/` : 'https://kshatria.github.io/kshatria.gihub.io/',
       filename: `js/[name].js`,
