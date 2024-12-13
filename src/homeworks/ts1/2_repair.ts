@@ -17,17 +17,32 @@ export class SomeClass {
   }
 }
 
-type Data = { type: 'Money'; value: { currency: string; amount: number } } | { type: 'Percent'; value: number };
+export type Money = {
+	type: 'Money';
+  currency: string;
+  amount: number;
+};
+
+export type Percent = {
+	type: 'Percent';
+  percent: number;
+};
+
+export type DataValue = Money | Percent;
+
+export type Data = {
+  value: DataValue;
+};
 
 export const getDataAmount = (data: Data): number => {
-  switch (data.type) {
+  switch (data.value.type) {
     case 'Money':
       return data.value.amount;
 
     default: {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const unhandled: never = data as never;
-      throw new Error(`unknown type: ${data.type}`);
+      throw new Error(`unknown type: ${data.value.type}`);
     }
   }
 };
