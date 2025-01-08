@@ -18,13 +18,13 @@ export class SomeClass {
 }
 
 export type Money = {
-	type: 'Money';
+  type: 'Money';
   currency: string;
   amount: number;
 };
 
 export type Percent = {
-	type: 'Percent';
+  type: 'Percent';
   percent: number;
 };
 

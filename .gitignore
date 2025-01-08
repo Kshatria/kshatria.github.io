@@ -132,3 +132,5 @@ build
 .idea
 .jest
 storybook-static
+
+.codegpt

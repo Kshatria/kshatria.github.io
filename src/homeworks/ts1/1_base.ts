@@ -18,7 +18,7 @@ export const round = (value: number, accuracy = 2): number => {
 const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-export const getTransformFromCss = (transformCssString: string): {x: number, y: number} => {
+export const getTransformFromCss = (transformCssString: string): { x: number; y: number } => {
   const data = transformCssString.match(transformRegexp);
   if (!data) return { x: 0, y: 0 };
   return {
@@ -36,7 +36,7 @@ export const getContrastType = (contrastValue: number): 'black' | 'white' => (co
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
-export const checkColor = (color: string): void => {
+export const checkColor = (color: string): void | never => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
@@ -55,15 +55,13 @@ export const hex2rgb = (color: string): [number, number, number] => {
 };
 
 type Item<T> = {
-	value: T;
-	number: number;
-}
+  value: T;
+  number: number;
+};
 
-export const getNumberedArray = <T>(arr: T[]): Item<T>[] =>
-  arr.map((value, number) => ({ value, number }));
+export const getNumberedArray = <T>(arr: T[]): Item<T>[] => arr.map((value, number) => ({ value, number }));
 
-export const toStringArray = <T>(arr: Item<T>[]): string[] =>
-  arr.map(({ value, number }) => `${value}_${number}`);
+export const toStringArray = <T>(arr: Item<T>[]): string[] => arr.map(({ value, number }) => `${value}_${number}`);
 
 type Custumer = {
   id: string | number;
