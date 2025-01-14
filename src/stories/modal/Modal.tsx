@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 
 import { createPortal } from 'react-dom';
 import classNames from 'classnames/bind';
@@ -7,24 +7,8 @@ import css from './Modal.scss';
 
 const cn = classNames.bind(css);
 
-const KEY_CODE_ESCAPE = 'Escape';
-
 const Modal = ({ children, onClose, visible }: ModalProps) => {
 	if (!visible) return null
-
-  const handleKeyDown = useCallback(
-    ({ code }: KeyboardEvent) => {
-      if (code === KEY_CODE_ESCAPE) onClose();
-    },
-    [onClose]
-  );
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleKeyDown]);
 
   return createPortal(
 			<div className={cn('modal')}>
