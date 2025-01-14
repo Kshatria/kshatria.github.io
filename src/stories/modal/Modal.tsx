@@ -10,6 +10,8 @@ const cn = classNames.bind(css);
 const KEY_CODE_ESCAPE = 'Escape';
 
 const Modal = ({ children, onClose, visible }: ModalProps) => {
+	if (!visible) return null
+
   const handleKeyDown = useCallback(
     ({ code }: KeyboardEvent) => {
       if (code === KEY_CODE_ESCAPE) onClose();
@@ -18,26 +20,24 @@ const Modal = ({ children, onClose, visible }: ModalProps) => {
   );
 
   useEffect(() => {
-    if (visible) document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
-      if (visible) document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handleKeyDown, visible]);
+  }, [handleKeyDown]);
 
-  return visible
-    ? createPortal(
-        <div className={cn('modal')}>
-          <div className={cn('modal__overlay')} onClick={onClose}></div>
-          <div className={cn('modal__content')}>
-            <button className={cn('modal__close')} type="button" onClick={onClose}>
-              &times;
-            </button>
-            <div className={cn('modal__wrapper')}>{children}</div>
-          </div>
-        </div>,
-        document.body
-      )
-    : null;
+  return createPortal(
+			<div className={cn('modal')}>
+				<div className={cn('modal__overlay')} onClick={onClose}></div>
+				<div className={cn('modal__content')}>
+					<button className={cn('modal__close')} type="button" onClick={onClose}>
+						&times;
+					</button>
+					<div className={cn('modal__wrapper')}>{children}</div>
+				</div>
+			</div>,
+			document.body
+		)
 };
 
 export { Modal, type ModalProps };

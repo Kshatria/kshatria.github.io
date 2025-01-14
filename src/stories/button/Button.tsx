@@ -6,13 +6,16 @@ import css from './Button.scss';
 const cn = classNames.bind(css);
 
 const Button = ({ color, disabled, text, onClick }: ButtonProps) => {
+
+	const btnClasses = cn('button', {
+		'button--disabled': disabled,
+		'button--primary': color === 'Primary',
+		'button--secondary': color === 'Secondary',
+	})
+
   return (
     <button
-      className={cn('button', {
-        'button--disabled': disabled,
-        'button--primary': color === 'Primary',
-        'button--secondary': color === 'Secondary',
-      })}
+      className={btnClasses}
       type="button"
       onClick={onClick}
     >
