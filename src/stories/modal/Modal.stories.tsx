@@ -1,8 +1,6 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import { Button, Modal, type ModalProps } from '@/shared/UIKit';
 import { useModal } from '@/hooks';
-
 
 const Presentation = (props: ModalProps) => {
   const modal = useModal();

@@ -8,20 +8,20 @@ import css from './Modal.scss';
 const cn = classNames.bind(css);
 
 const Modal = ({ children, onClose, visible }: ModalProps) => {
-	if (!visible) return null
+  if (!visible) return null;
 
   return createPortal(
-			<div className={cn('modal')}>
-				<div className={cn('modal__overlay')} onClick={onClose}></div>
-				<div className={cn('modal__content')}>
-					<button className={cn('modal__close')} type="button" onClick={onClose}>
-						&times;
-					</button>
-					<div className={cn('modal__wrapper')}>{children}</div>
-				</div>
-			</div>,
-			document.body
-		)
+    <div className={cn('modal')}>
+      <div className={cn('modal__overlay')} onClick={onClose}></div>
+      <div className={cn('modal__content')}>
+        <button className={cn('modal__close')} type="button" onClick={onClose}>
+          &times;
+        </button>
+        <div className={cn('modal__wrapper')}>{children}</div>
+      </div>
+    </div>,
+    document.body
+  );
 };
 
 export { Modal, type ModalProps };

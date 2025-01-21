@@ -26,7 +26,7 @@ module.exports = (_, args) => {
       modules: [src, 'node_modules'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
-        '@': path.join(__dirname, 'src'),
+        '@': src,
       },
     },
 
