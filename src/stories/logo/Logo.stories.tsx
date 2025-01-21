@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo } from './Logo';
+import { Logo } from '@/shared/UIKit';
 
 const Presentation = () => {
   return <Logo />;

@@ -6,5 +6,5 @@ export type ModalProps = {
   /** Функция обработки закрытия всплывающего окна */
   onClose: () => void;
   /** Признак видимости всплывающего окна */
-  visible?: boolean;
+  visible: boolean;
 };

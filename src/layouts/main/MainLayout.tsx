@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import css from './MainLayout.scss';
-import { Header } from '../../stories/header';
+import { Header } from '@/shared/UIKit';
 
 const cn = classNames.bind(css);
 

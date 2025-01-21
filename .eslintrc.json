@@ -45,7 +45,13 @@
                     ".ts",
                     ".tsx"
                 ]
-            }
+            },
+						"webpack": {
+							"config": "path/to/webpack.config.js"
+						},
+						"typescript": {
+							"project": "./tsconfig.json"
+						}
         }
     }
 }

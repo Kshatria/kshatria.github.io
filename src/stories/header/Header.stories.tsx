@@ -1,6 +1,5 @@
 import React from 'react';
-import { Header, type HeaderProps } from './Header';
-import { Logo } from '../logo';
+import { Header, Logo, type HeaderProps } from '@/shared/UIKit';
 
 const Presentation = (props: HeaderProps) => {
   return (

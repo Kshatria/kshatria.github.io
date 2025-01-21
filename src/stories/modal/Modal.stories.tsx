@@ -1,12 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Modal, type ModalProps } from './Modal';
-import { Button } from '../button';
-import { useModal } from '../../hooks';
+import { Button, Modal, type ModalProps } from '@/shared/UIKit';
+import { useModal } from '@/hooks';
 
-import css from './Modal.scss';
-
-const cn = classNames.bind(css);
 
 const Presentation = (props: ModalProps) => {
   const modal = useModal();
@@ -15,7 +11,7 @@ const Presentation = (props: ModalProps) => {
     <>
       <Button color={'Secondary'} text="Нажми меня" onClick={modal.show} />
       <Modal {...props} visible={modal.visible} onClose={modal.hide}>
-        <h2 className={cn('modal__title')}>Привет Мир!</h2>
+        <h2>Привет Мир!</h2>
         <Button color={'Primary'} text="Продолжить" onClick={modal.hide} />
       </Modal>
     </>

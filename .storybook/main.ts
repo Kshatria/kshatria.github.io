@@ -1,3 +1,5 @@
+const path = require('path');
+
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
 
@@ -20,6 +22,14 @@ const config = {
 
   typescript: {
     reactDocgen: "react-docgen-typescript"
-  }
+  },
+
+	webpackFinal: async (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, '../src'), // Настройте путь к `src` в вашем проекте
+    };
+    return config;
+  },
 };
 export default config;

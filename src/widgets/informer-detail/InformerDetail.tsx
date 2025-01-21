@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Button } from '../button';
+import { Button } from '@/shared/UIKit';
 import type { InformerDetailProps } from './InformerDetail.types';
 import css from './InformerDetail.scss';
 

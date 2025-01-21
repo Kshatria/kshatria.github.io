@@ -1,5 +1,5 @@
 import React from 'react';
-import { InformerDetail, type InformerDetailProps } from './InformerDetail';
+import { InformerDetail, type InformerDetailProps } from '@/widgets';
 
 const Presentation = (props: InformerDetailProps) => {
   return <InformerDetail {...props} />;
