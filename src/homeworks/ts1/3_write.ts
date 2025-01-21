@@ -65,7 +65,7 @@ type Product = Category & {
   photo: string;
   desc?: string;
   createdAt: string;
-  oldPrice?: number;
+  oldPrice?: number | null;
   price: number;
   category: Category;
 };
