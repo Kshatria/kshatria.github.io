@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames/bind';
 import type { InformerProps } from './Informer.types';
 import ClampLines from 'react-clamp-lines';

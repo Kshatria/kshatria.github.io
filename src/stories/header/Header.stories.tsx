@@ -1,4 +1,3 @@
-import React from 'react';
 import { Header, Logo, type HeaderProps } from '@/shared/UIKit';
 
 const Presentation = (props: HeaderProps) => {

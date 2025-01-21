@@ -1,4 +1,3 @@
-import React from 'react';
 import { Informer, type InformerProps } from '@/widgets';
 
 const Presentation = (props: InformerProps) => {

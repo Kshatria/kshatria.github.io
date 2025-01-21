@@ -10,7 +10,7 @@ const src = path.join(__dirname, 'src');
 const host = 'localhost';
 
 module.exports = (_, args) => {
-	const isDevelopment = args.mode === 'development';
+  const isDevelopment = args.mode === 'development';
 
   return {
     devtool: 'source-map',
@@ -33,11 +33,13 @@ module.exports = (_, args) => {
     entry: './index.tsx',
     output: {
       path: dist,
-      publicPath: isDevelopment ? `http://${host}:${port}/` : 'https://kshatria.github.io/' /* <- прописать данные своего github */,
+      publicPath: isDevelopment
+        ? `http://${host}:${port}/`
+        : 'https://kshatria.github.io/' /* <- прописать данные своего github */,
       filename: `js/[name].js`,
       chunkFilename: `js/[name].js`,
     },
-		stats: 'errors-only',
+    stats: 'errors-only',
     module: {
       rules: [
         {

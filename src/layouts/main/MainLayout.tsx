@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames/bind';
 import css from './MainLayout.scss';
 import { Header } from '@/shared/UIKit';

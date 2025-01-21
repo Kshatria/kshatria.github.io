@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, type ButtonProps } from '@/shared/UIKit';
 
 const Presentation = (props: ButtonProps) => {
