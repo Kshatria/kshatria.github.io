@@ -21,6 +21,9 @@ module.exports = (_, args) => {
       hot: true,
       historyApiFallback: true,
       host,
+			server: {
+				type: "http",
+			},
     },
     resolve: {
       modules: [src, 'node_modules'],
@@ -30,7 +33,7 @@ module.exports = (_, args) => {
       },
     },
 
-    entry: './index.tsx',
+    entry: './app.tsx',
     output: {
       path: dist,
       publicPath: isDevelopment ? `http://${host}:${port}/` : 'https://kshatria.github.io/' /* <- прописать данные своего github */,
@@ -90,7 +93,7 @@ module.exports = (_, args) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        favicon: './favicon.svg',
+        favicon: '../static/favicon.svg',
       }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
