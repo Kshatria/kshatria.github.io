@@ -1,0 +1,46 @@
+.informer {
+	padding: 24px;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	max-width: 300px;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__category {
+		font-size: 14px;
+		line-height: 18px;
+		color: grey;
+	}
+
+	&__sum {
+		font-size: 24px;
+		line-height: 30px;
+		color: orange;
+	}
+
+	&__name {
+		font-size: 32px;
+		line-height: 40px;
+		margin-bottom: 16px;
+	}
+
+	&__desc > div {
+		margin: 0 0 16px;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.clamp-lines__button {
+		color: green;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		margin: 0;
+	}
+}

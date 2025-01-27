@@ -10,11 +10,12 @@ const src = path.join(__dirname, 'src');
 const host = 'localhost';
 
 module.exports = (_, args) => {
+	const isDevelopment = args.mode === 'development';
+
   return {
     devtool: 'source-map',
     context: src,
     devServer: {
-      open: true,
       port,
       hot: true,
       historyApiFallback: true,
@@ -27,18 +28,18 @@ module.exports = (_, args) => {
       modules: [src, 'node_modules'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
-        src,
+        '@': src,
       },
     },
 
-    entry: './app.tsx',
+    entry: './index.tsx',
     output: {
       path: dist,
-      publicPath:
-        args.mode === 'development' ? `http://${host}:${port}/` : 'https://kshatria.github.io/react-start-template/',
+      publicPath: isDevelopment ? `http://${host}:${port}/` : 'https://kshatria.github.io/' /* <- прописать данные своего github */,
       filename: `js/[name].js`,
       chunkFilename: `js/[name].js`,
     },
+		stats: 'errors-only',
     module: {
       rules: [
         {
