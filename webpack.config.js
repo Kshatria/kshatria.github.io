@@ -16,7 +16,6 @@ module.exports = (_, args) => {
     devtool: 'source-map',
     context: src,
     devServer: {
-      open: true,
       port,
       hot: true,
       historyApiFallback: true,
@@ -33,7 +32,7 @@ module.exports = (_, args) => {
       },
     },
 
-    entry: './app.tsx',
+    entry: './index.tsx',
     output: {
       path: dist,
       publicPath: isDevelopment ? `http://${host}:${port}/` : 'https://kshatria.github.io/' /* <- прописать данные своего github */,
