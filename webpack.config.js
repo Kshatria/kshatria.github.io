@@ -10,7 +10,7 @@ const src = path.join(__dirname, 'src');
 const host = 'localhost';
 
 module.exports = (_, args) => {
-	const isDevelopment = args.mode === 'development';
+  const isDevelopment = args.mode === 'development';
 
   return {
     devtool: 'source-map',
@@ -20,9 +20,9 @@ module.exports = (_, args) => {
       hot: true,
       historyApiFallback: true,
       host,
-			server: {
-				type: "http",
-			},
+      server: {
+        type: "http",
+      },
     },
     resolve: {
       modules: [src, 'node_modules'],
@@ -35,11 +35,13 @@ module.exports = (_, args) => {
     entry: './index.tsx',
     output: {
       path: dist,
-      publicPath: isDevelopment ? `http://${host}:${port}/` : 'https://kshatria.github.io/' /* <- прописать данные своего github */,
+      publicPath: isDevelopment
+        ? `http://${host}:${port}/`
+        : 'https://kshatria.github.io/', // <- прописать данные своего github
       filename: `js/[name].js`,
       chunkFilename: `js/[name].js`,
     },
-		stats: 'errors-only',
+    stats: 'errors-only',
     module: {
       rules: [
         {
@@ -48,44 +50,37 @@ module.exports = (_, args) => {
           exclude: /node_modules/,
         },
         {
-          test: /\.less$/,
+          test: /\.s[ac]ss$/i,
           use: [
+            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
-              loader: MiniCssExtractPlugin.loader,
+              loader: 'css-loader',
+              options: {
+                modules: {
+                  auto: true,
+                  localIdentName: '[name]_[local]-[hash:base64:5]',
+                },
+                sourceMap: isDevelopment,
+              },
             },
-            'css-loader',
-            'less-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: isDevelopment,
+              },
+            },
           ],
         },
         {
           test: /\.css$/,
           use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-            },
+            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
           ],
         },
         {
-          test: /\.svg/,
+          test: /\.svg$/,
           type: 'asset/inline',
-        },
-        {
-          test: /\.s[ac]ss$/i,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-            },
-            {
-              loader: 'css-loader',
-              options: {
-                modules: {
-                  localIdentName: '[name]_[local]-[hash:base64:5]',
-                },
-              },
-            },
-            'sass-loader',
-          ],
         },
       ],
     },

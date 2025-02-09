@@ -17,7 +17,9 @@ const Modal = ({ children, onClose, visible }: ModalProps) => {
         <button className={cn('modal__close')} type="button" onClick={onClose}>
           &times;
         </button>
-        <div className={cn('modal__wrapper')}>{children}</div>
+        <div className={cn('modal__wrapper')}>
+					{children}
+				</div>
       </div>
     </div>,
     document.body

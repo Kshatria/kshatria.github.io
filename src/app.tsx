@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from '../static/logo.svg';
-import './app.css';
+import './services/i18next';
+import { MainLayout } from './layouts/main';
+import { ThemeProvider, LanguageProvider } from "@/providers";
+
+
 
 const App = () => {
   return (
-		<section className="app">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-			</header>
-		</section>
+		<LanguageProvider>
+			<ThemeProvider>
+				<MainLayout>
+					Привет Мир!
+				</MainLayout>
+			</ThemeProvider>
+		</LanguageProvider>
   );
 }
 
