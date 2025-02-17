@@ -1,15 +1,9 @@
-import React from 'react';
-import logo from '../static/logo.svg';
-import './app.css';
+import React from 'react'
+import './services/i18next'
+import { MainLayout } from './layouts/main'
 
 const App = () => {
-  return (
-		<section className="app">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-			</header>
-		</section>
-  );
+	return <MainLayout>Привет Мир!</MainLayout>
 }
 
 export { App }

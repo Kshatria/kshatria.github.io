@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react'
 
 /**
  * Добавляет компоненту функциональность по управлению отображением модального контента (попапы, дропдауны и т.п.).
@@ -11,23 +11,23 @@ import { useCallback, useMemo, useState } from 'react';
  *  - toggle - переключает видимость контента в противоположное состояние
  */
 const useModal = (defaultVisible = false) => {
-  const [visible, setVisible] = useState(defaultVisible);
+	const [visible, setVisible] = useState(defaultVisible)
 
-  const show = useCallback(() => setVisible(true), []);
+	const show = useCallback(() => setVisible(true), [])
 
-  const hide = useCallback(() => setVisible(false), []);
+	const hide = useCallback(() => setVisible(false), [])
 
-  const toggle = useCallback(() => setVisible((prevValue) => !prevValue), []);
+	const toggle = useCallback(() => setVisible((prevValue) => !prevValue), [])
 
-  return useMemo(
-    () => ({
-      show,
-      hide,
-      toggle,
-      visible,
-    }),
-    [hide, show, toggle, visible]
-  );
-};
+	return useMemo(
+		() => ({
+			show,
+			hide,
+			toggle,
+			visible,
+		}),
+		[hide, show, toggle, visible]
+	)
+}
 
-export { useModal };
+export { useModal }

@@ -1,1 +1,1 @@
-export { InformerDetail, type InformerDetailProps } from './InformerDetail';
+export { InformerDetail, type InformerDetailProps } from './InformerDetail'
