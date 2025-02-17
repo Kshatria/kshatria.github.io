@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import type { ThemeSwitcherItem } from './ThemeSwitcher.types';
+import type { ThemeSwitcherItem } from './ThemeSwitcher.types'
 import { useTheme } from '@/providers'
 import { Switcher } from '../Switcher'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
 const ThemeSwitcher = () => {
 	const { t } = useTranslation()
-	const { theme, setTheme } = useTheme();
+	const { theme, setTheme } = useTheme()
 
 	const themes: ThemeSwitcherItem[] = [
 		{
@@ -18,7 +18,7 @@ const ThemeSwitcher = () => {
 		{
 			name: 'dark-theme',
 			icon: 'moon',
-			text: t('themeDark')
+			text: t('themeDark'),
 		},
 	]
 
@@ -27,8 +27,11 @@ const ThemeSwitcher = () => {
 			items={themes}
 			defaultValue={theme}
 			name="theme"
-			onChange={() => setTheme(theme === 'light-theme' ? 'dark-theme' : 'light-theme')} />
+			onChange={() =>
+				setTheme(theme === 'light-theme' ? 'dark-theme' : 'light-theme')
+			}
+		/>
 	)
-};
+}
 
-export { ThemeSwitcher };
+export { ThemeSwitcher }

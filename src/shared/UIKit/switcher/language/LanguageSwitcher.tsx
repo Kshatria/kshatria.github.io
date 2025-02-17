@@ -1,12 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import type { LanguageSwitcherItem } from './LanguageSwitcher.types';
+import type { LanguageSwitcherItem } from './LanguageSwitcher.types'
 import { Switcher } from '../Switcher'
 import { useLanguage } from '@/providers'
 
-
 const LanguageSwitcher = () => {
-
 	const { language, setLanguage } = useLanguage()
 
 	const languages: LanguageSwitcherItem[] = [
@@ -16,7 +14,7 @@ const LanguageSwitcher = () => {
 		},
 		{
 			name: 'en',
-			text: 'En'
+			text: 'En',
 		},
 	]
 
@@ -25,8 +23,11 @@ const LanguageSwitcher = () => {
 			items={languages}
 			defaultValue={language}
 			name="languages"
-			onChange={() => setLanguage(language => language === 'ru' ? 'en' : 'ru')} />
+			onChange={() =>
+				setLanguage((language) => (language === 'ru' ? 'en' : 'ru'))
+			}
+		/>
 	)
-};
+}
 
-export { LanguageSwitcher };
+export { LanguageSwitcher }

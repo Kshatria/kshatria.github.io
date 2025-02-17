@@ -1,10 +1,10 @@
-import React, { useCallback, type ChangeEvent } from 'react';
+import React, { useCallback, type ChangeEvent } from 'react'
 
-import classNames from 'classnames/bind';
-import type { InputProps } from './Input.types';
-import css from './Input.scss';
+import classNames from 'classnames/bind'
+import type { InputProps } from './Input.types'
+import css from './Input.scss'
 
-const cn = classNames.bind(css);
+const cn = classNames.bind(css)
 
 const Input = ({
 	value,
@@ -12,13 +12,16 @@ const Input = ({
 	onChange,
 	onIconClick,
 	label,
-	placeholder = 'Введите текст'
+	placeholder = 'Введите текст',
 }: InputProps) => {
-	const handler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-		onChange(e.target.value)
-	}, [onChange])
+	const handler = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			onChange(e.target.value)
+		},
+		[onChange]
+	)
 
-  return (
+	return (
 		<fieldset className={cn('input')}>
 			{label && <label className={cn('input__label')}>{label}</label>}
 			<div className="input__wrap">
@@ -27,11 +30,17 @@ const Input = ({
 					name={name}
 					value={value}
 					onChange={handler}
-					placeholder={placeholder} />
-				{value && <button className={cn('input__clear')} onClick={ onIconClick }></button>}
+					placeholder={placeholder}
+				/>
+				{value && (
+					<button
+						className={cn('input__clear')}
+						onClick={onIconClick}
+					></button>
+				)}
 			</div>
 		</fieldset>
 	)
-};
+}
 
-export { Input, type InputProps };
+export { Input, type InputProps }

@@ -1,5 +1,5 @@
 export { LanguageSwitcher } from './LanguageSwitcher'
 export type {
 	LanguageVariants,
-	LanguageSwitcherItem
+	LanguageSwitcherItem,
 } from './LanguageSwitcher.types'

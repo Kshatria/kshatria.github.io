@@ -2,5 +2,5 @@ export { ThemeSwitcher } from './ThemeSwitcher'
 export type {
 	ThemesVariants,
 	ThemesIcons,
-	ThemeSwitcherItem
+	ThemeSwitcherItem,
 } from './ThemeSwitcher.types'

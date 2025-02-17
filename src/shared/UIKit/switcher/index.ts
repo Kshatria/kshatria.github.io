@@ -1,13 +1,13 @@
-export { Switcher, type SwitcherProps } from './Switcher';
+export { Switcher, type SwitcherProps } from './Switcher'
 export {
 	ThemeSwitcher,
 	type ThemesVariants,
 	type ThemesIcons,
-	type ThemeSwitcherItem
-} from './theme';
+	type ThemeSwitcherItem,
+} from './theme'
 
 export {
 	LanguageSwitcher,
 	type LanguageVariants,
-	type LanguageSwitcherItem
-} from './language';
+	type LanguageSwitcherItem,
+} from './language'

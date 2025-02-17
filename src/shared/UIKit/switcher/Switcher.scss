@@ -28,7 +28,7 @@
 
 	&__wrapper {
 		width: calc(100% / 2);
-		
+
 		&:nth-of-type(1):has(input:checked) ~ .switcher__slider {
 			transform: translateX(0);
 		}

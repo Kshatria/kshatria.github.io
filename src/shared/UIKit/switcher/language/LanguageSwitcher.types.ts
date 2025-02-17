@@ -2,7 +2,7 @@ export type LanguageVariants = 'ru' | 'en'
 
 export type LanguageSwitcherItem = {
 	/** Имя языка */
-	name: LanguageVariants,
+	name: LanguageVariants
 	/** Текст языка */
 	text: string
 }

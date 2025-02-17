@@ -1,8 +1,8 @@
-export { Button, type ButtonProps } from './button';
-export { Header, type HeaderProps } from './header';
-export { Input, type InputProps } from './input';
-export { Logo } from './logo';
-export { Modal, type ModalProps } from './modal';
+export { Button, type ButtonProps } from './button'
+export { Header, type HeaderProps } from './header'
+export { Input, type InputProps } from './input'
+export { Logo } from './logo'
+export { Modal, type ModalProps } from './modal'
 export {
 	Switcher,
 	ThemeSwitcher,
@@ -12,5 +12,5 @@ export {
 	type ThemeSwitcherItem,
 	LanguageSwitcher,
 	type LanguageVariants,
-	type LanguageSwitcherItem
-} from './switcher';
+	type LanguageSwitcherItem,
+} from './switcher'
