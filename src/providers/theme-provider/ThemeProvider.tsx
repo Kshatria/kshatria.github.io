@@ -1,4 +1,11 @@
-import React, { useState, createContext, useContext, FC } from 'react'
+import React, {
+	useState,
+	createContext,
+	useContext,
+	useCallback,
+	useMemo,
+	FC,
+} from 'react'
 import type { ThemesVariants } from '@/shared/UIKit'
 import type {
 	ThemeProviderProps,
@@ -9,8 +16,24 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 	const [theme, setTheme] = useState<ThemesVariants>('light-theme')
+
+	const handleSetTheme = useCallback(
+		(newTheme: ThemesVariants) => {
+			setTheme(newTheme)
+		},
+		[setTheme]
+	)
+
+	const contextValue = useMemo(
+		() => ({
+			theme,
+			setTheme: handleSetTheme,
+		}),
+		[theme, handleSetTheme]
+	)
+
 	return (
-		<ThemeContext.Provider value={{ theme, setTheme }}>
+		<ThemeContext.Provider value={contextValue}>
 			{children}
 		</ThemeContext.Provider>
 	)

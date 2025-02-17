@@ -1,7 +1,9 @@
 import React from 'react'
 import { Header, Logo, type HeaderProps } from '@/shared/UIKit'
 
-const Presentation = (props: HeaderProps) => {
+type PresentationProps = HeaderProps
+
+const Presentation = (props: PresentationProps) => {
 	return (
 		<Header {...props}>
 			<Logo />

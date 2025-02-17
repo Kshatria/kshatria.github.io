@@ -2,7 +2,9 @@ import React from 'react'
 import { Button, Modal, type ModalProps } from '@/shared/UIKit'
 import { useModal } from '@/hooks'
 
-const Presentation = (props: ModalProps) => {
+type PresentationProps = ModalProps
+
+const Presentation = (props: PresentationProps) => {
 	const modal = useModal()
 
 	return (

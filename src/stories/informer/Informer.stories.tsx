@@ -1,7 +1,9 @@
 import React from 'react'
 import { Informer, type InformerProps } from '@/widgets'
 
-const Presentation = (props: InformerProps) => {
+type PresentationProps = InformerProps
+
+const Presentation = (props: PresentationProps) => {
 	return <Informer {...props} />
 }
 

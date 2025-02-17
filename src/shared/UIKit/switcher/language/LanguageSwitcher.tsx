@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 import type { LanguageSwitcherItem } from './LanguageSwitcher.types'
 import { Switcher } from '../Switcher'
@@ -18,14 +18,16 @@ const LanguageSwitcher = () => {
 		},
 	]
 
+	const handler = useCallback(() => {
+		setLanguage(language === 'ru' ? 'en' : 'ru')
+	}, [language, setLanguage])
+
 	return (
 		<Switcher
 			items={languages}
 			defaultValue={language}
 			name="languages"
-			onChange={() =>
-				setLanguage((language) => (language === 'ru' ? 'en' : 'ru'))
-			}
+			onChange={handler}
 		/>
 	)
 }

@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { Button, Modal, Input, type ModalProps } from '@/shared/UIKit'
 import { useModal } from '@/hooks'
 
-const Presentation = (props: ModalProps) => {
+type PresentationProps = ModalProps
+
+const Presentation = (props: PresentationProps) => {
 	const modal = useModal()
 	const [title, setTitle] = useState('')
 	const [description, setDescription] = useState('')

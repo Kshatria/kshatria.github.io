@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, type ButtonProps } from '@/shared/UIKit'
 
-const Presentation = (props: ButtonProps) => {
+type PresentationProps = ButtonProps
+
+const Presentation = (props: PresentationProps) => {
 	return <Button {...props} />
 }
 

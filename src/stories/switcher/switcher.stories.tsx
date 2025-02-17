@@ -1,7 +1,9 @@
 import React from 'react'
 import { Switcher, type SwitcherProps } from '@/shared/UIKit'
 
-const Presentation = (props: SwitcherProps) => {
+type PresentationProps = SwitcherProps
+
+const Presentation = (props: PresentationProps) => {
 	return <Switcher {...props} />
 }
 

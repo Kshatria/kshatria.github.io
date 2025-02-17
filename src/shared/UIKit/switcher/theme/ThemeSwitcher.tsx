@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 import type { ThemeSwitcherItem } from './ThemeSwitcher.types'
 import { useTheme } from '@/providers'
@@ -22,14 +22,16 @@ const ThemeSwitcher = () => {
 		},
 	]
 
+	const handler = useCallback(() => {
+		setTheme(theme === 'light-theme' ? 'dark-theme' : 'light-theme')
+	}, [theme, setTheme])
+
 	return (
 		<Switcher
 			items={themes}
 			defaultValue={theme}
 			name="theme"
-			onChange={() =>
-				setTheme(theme === 'light-theme' ? 'dark-theme' : 'light-theme')
-			}
+			onChange={handler}
 		/>
 	)
 }
