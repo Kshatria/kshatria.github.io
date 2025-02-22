@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap);
+.button{padding:10px 20px;border:none;border-radius:5px;cursor:pointer;font-size:16px;margin:0 auto;background-color:#000;color:#fff}.button:hover{background-color:#d3d3d3;color:#000}.button--disabled{pointer-events:none;opacity:.3}.button--primary{background-color:#000;color:#fff}.button--primary:hover{background-color:#d3d3d3;color:#000}.button--secondary{background-color:orange;color:#fff}.button--secondary:hover{background-color:#ff4500;color:#fff}
+.header{position:fixed;left:0;right:0;box-shadow:0 5px 5px rgba(0,0,0,.3);padding:6px 20px;display:flex;justify-content:space-between;align-items:center;background-color:var(--c-bg-primary)}.header__wrapper{display:flex}.header__switcher{margin-right:16px}.header__switcher:last-of-type{margin-right:0}
+.input{border:0;margin:0;padding:0;display:flex;flex-direction:column}.input__label{color:gray;font-size:14px;line-height:20px;margin-bottom:4px}.input__field{display:block;box-sizing:border-box;outline:none;padding:10px 32px 10px 20px;border:1px solid gray;border-radius:20px;width:100%;font-size:16px;line-height:20px;color:#000}.input__field:hover,.input__field:focus{border-color:orange}.input__wrap{position:relative}.input__clear{cursor:pointer;position:absolute;top:50%;right:10px;width:20px;height:20px;transform:translateY(-50%);background-color:rgba(0,0,0,0);border:none}.input__clear::before,.input__clear::after{content:"";position:absolute;top:50%;left:50%;width:80%;height:2px;background-color:orange}.input__clear::before{transform:translate(-50%, -50%) rotate(45deg)}.input__clear::after{transform:translate(-50%, -50%) rotate(-45deg)}
+.logo{position:relative;width:60px;height:60px;border-radius:50%;background-color:#ff7f00}.logo::before{content:"+";position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);font-size:30px;color:var(--c-text-primary)}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}.modal__overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7)}.modal__content{position:relative;max-width:400px;margin:100px auto;background:var(--c-bg-primary);padding:20px;border-radius:10px;z-index:1100;text-align:center;color:var(--c-text-primary)}.modal__wrapper{min-height:100px}.modal__title{text-align:center;margin:0 0 40px;font-size:24px}.modal__text{margin-bottom:20px}.modal__close{position:absolute;top:10px;right:10px;background:rgba(0,0,0,0);color:orange;border:none;font-size:24px;cursor:pointer}.modal__close:hover{color:#ff4500}
+.switcher{background-color:var(--c-bg-secondary);border-radius:10px;display:flex;padding:0 3px;align-items:center;position:relative;overflow:hidden;min-width:200px}.switcher__slider{display:block;position:absolute;z-index:1;width:calc((100% - 6px)/2);top:3px;transform:translatex(-110%);bottom:3px;border-radius:6px;transition:.15s ease,transform .25s ease-out;background-color:var(--c-bg-button);box-shadow:var(--slider-shadow)}.switcher__field{display:none}.switcher__wrapper{width:50%}.switcher__wrapper:nth-of-type(1):has(input:checked)~.switcher__slider{transform:translateX(0)}.switcher__wrapper:nth-of-type(2):has(input:checked)~.switcher__slider{transform:translateX(100%)}.switcher__label{cursor:pointer;position:relative;z-index:2;color:var(--c-text-secondary)}.switcher__label span{padding:8px;border-radius:6px;display:flex;justify-content:center;align-items:center;font-weight:500;text-wrap:nowrap}.switcher__label svg{display:inline-block;margin-right:.5rem;width:20px}
+.main-layout{padding-top:60px}
+:root {
+	--c-text-primary: #191919;
+	--c-text-secondary: #737374;
+	--c-border-primary: #ccc;
+	--c-bg-body: #ccc;
+	--c-bg-primary: #fff;
+	--c-bg-secondary: #d4d8dd;
+	--c-bg-button: #fff;
+	--slider-shadow: inset 0 1px 1px #ddd, 0 2px 3px #ccc;
+
+	[data-theme='dark-theme'] {
+		--c-text-primary: #eee;
+		--c-text-secondary: #d3d5db;
+		--c-border-primary: #454545;
+		--c-bg-primary: #323339;
+		--c-bg-secondary: #222128;
+		--c-bg-button: #494a50;
+		--slider-shadow: inset 0 1px 1px #767676;
+	}
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	line-height: 1.5;
+	background-color: var(--c-bg-body);
+	color: var(--c-text-primary);
+}
+
+
+/*# sourceMappingURL=main.css.map*/
