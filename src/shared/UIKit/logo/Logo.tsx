@@ -1,11 +1,11 @@
-import React from 'react';
-import classNames from 'classnames/bind';
-import css from './Logo.scss';
+import React from 'react'
+import classNames from 'classnames/bind'
+import css from './Logo.scss'
 
-const cn = classNames.bind(css);
+const cn = classNames.bind(css)
 
 const Logo = () => {
-  return <div className={cn('logo')}></div>;
-};
+	return <div className={cn('logo')}></div>
+}
 
-export { Logo };
+export { Logo }

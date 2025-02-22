@@ -1,20 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+	--c-text-primary: #191919;
+	--c-text-secondary: #737374;
+	--c-border-primary: #ccc;
+	--c-bg-body: #ccc;
+	--c-bg-primary: #fff;
+	--c-bg-secondary: #d4d8dd;
+	--c-bg-button: #fff;
+	--slider-shadow: inset 0 1px 1px #ddd, 0 2px 3px #ccc;
+
+	[data-theme='dark-theme'] {
+		--c-text-primary: #eee;
+		--c-text-secondary: #d3d5db;
+		--c-border-primary: #454545;
+		--c-bg-primary: #323339;
+		--c-bg-secondary: #222128;
+		--c-bg-button: #494a50;
+		--slider-shadow: inset 0 1px 1px #767676;
+	}
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-}
-
-.App-logo {
-	display: block;
-	max-width: 300px;
-	height: auto;
-	margin: 0 auto;
+	font-family: 'Inter', sans-serif;
+	line-height: 1.5;
+	background-color: var(--c-bg-body);
+	color: var(--c-text-primary);
 }
