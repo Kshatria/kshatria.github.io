@@ -1,0 +1,13 @@
+.scroll-list {
+	height: '400px';
+	overflow-y: 'auto';
+	border: '1px solid #ccc';
+
+	&__item {
+		margin-bottom: 24px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

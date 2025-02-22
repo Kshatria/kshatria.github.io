@@ -1,16 +1,8 @@
-export type InformerDetailProps = {
-	/* Название категории  */
-	category: string
-	/* Дата операции  */
-	date: string
-	/* Описание  */
-	description: string
+import { type Operation } from '@/homeworks/ts1/3_write'
+
+export type InformerDetailProps = Operation & {
 	/* Недоступно редактирование  */
-	disabled: boolean
-	/* Название */
-	name: string
-	/* Сумма операции  */
-	sum: number
+	disabled?: boolean
 	/* Событие редактирования операции */
 	onClick: () => void
 }
