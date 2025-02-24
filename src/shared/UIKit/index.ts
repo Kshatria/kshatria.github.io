@@ -14,3 +14,5 @@ export {
 	type LanguageVariants,
 	type LanguageSwitcherItem,
 } from './switcher'
+
+export { Loader } from './loader'
