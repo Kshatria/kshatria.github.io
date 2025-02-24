@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { InformerDetail, type InformerDetailProps } from '@/widgets'
+import { Loader } from '@/shared/UIKit'
 import { createRandomOperation } from '@/homeworks/ts1/3_write'
 
 import classNames from 'classnames/bind'
@@ -22,12 +23,24 @@ const ScrollList = () => {
 	const observerRef = useRef<IntersectionObserver | null>(null)
 	const loadMoreRef = useRef<HTMLDivElement | null>(null)
 
+	const [loading, setLoading] = useState(false)
+
 	const fetchMoreItems = useCallback(() => {
-		const currentDate = new Date().toLocaleString('ru-RU')
-		setItems(
-			(prev) => [...prev, createRandomOperation(currentDate)] as Item[]
-		)
-	}, [])
+		if (loading) return
+
+		setLoading(true)
+
+		setTimeout(() => {
+			// Искуственная задержка. Она тут не нужна. Лоадер классный =)
+			const currentDate = new Date().toLocaleString('ru-RU')
+			setItems(
+				(prev) =>
+					[...prev, createRandomOperation(currentDate)] as Item[]
+			)
+
+			setLoading(false)
+		}, 2000)
+	}, [loading, setLoading])
 
 	useEffect(() => {
 		fetchMoreItems()
@@ -60,6 +73,7 @@ const ScrollList = () => {
 				))}
 			</div>
 			<div ref={loadMoreRef} style={{ height: '20px' }} />
+			{loading && <Loader />}
 		</article>
 	)
 }
