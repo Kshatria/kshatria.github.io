@@ -87,7 +87,7 @@ type OperationData = {
 	category: Category
 }
 
-type Operation = (OperationData & Profit) | (OperationData & Cost)
+export type Operation = (OperationData & Profit) | (OperationData & Cost)
 
 const fastRandString = (n: number) => {
 	return [...Array(n)]

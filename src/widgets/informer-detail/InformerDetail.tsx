@@ -7,25 +7,26 @@ import css from './InformerDetail.scss'
 const cn = classNames.bind(css)
 
 const InformerDetail = ({
+	id,
 	category,
-	date,
-	description,
-	disabled,
+	createdAt,
+	desc,
+	disabled = false,
 	name,
-	sum,
+	amount,
 	onClick,
 }: InformerDetailProps) => {
 	return (
-		<article className={cn('informer-detail')}>
+		<article className={cn('informer-detail')} id={id}>
 			<div className={cn('informer-detail__wrapper')}>
 				<div className={cn('informer-detail__category')}>
-					{category}
+					{category.name}
 				</div>
-				<div className={cn('informer-detail__date')}>{date}</div>
+				<div className={cn('informer-detail__date')}>{createdAt}</div>
 			</div>
 			<div className={cn('informer-detail__name')}>{name}</div>
-			<div className={cn('informer-detail__desc')}>{description}</div>
-			<div className={cn('informer-detail__sum')}>{sum + '$'}</div>
+			<div className={cn('informer-detail__desc')}>{desc}</div>
+			<div className={cn('informer-detail__sum')}>{amount + '$'}</div>
 			<Button
 				disabled={disabled}
 				text="Редактировать"
