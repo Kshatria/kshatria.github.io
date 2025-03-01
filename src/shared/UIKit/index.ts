@@ -16,3 +16,4 @@ export {
 } from './switcher'
 
 export { Loader } from './loader'
+export { RangeSlider, type RangeSliderProps } from './range-slider'

@@ -1,4 +1,3 @@
-import React from 'react'
 import { ScrollList } from '@/widgets'
 
 const Docs = {
