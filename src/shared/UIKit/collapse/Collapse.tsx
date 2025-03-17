@@ -16,24 +16,19 @@ const Collapse: FC<CollapseProps> = ({ opened, children }) => {
 		if (!contentRef.current) return
 
 		const resizeObserver = new ResizeObserver(() => {
-			console.log(contentRef.current.scrollHeight)
+			if (opened) {
+				const height = contentRef.current.scrollHeight
+				setContentHeight(height)
+				return
+			}
+
+			setContentHeight(0)
 		})
 
 		resizeObserver.observe(contentRef.current)
 
 		return () => {
 			resizeObserver.disconnect()
-		}
-	}, [])
-
-	useEffect(() => {
-		if (opened) {
-			if (contentRef.current) {
-				const height = contentRef.current.scrollHeight
-				setContentHeight(height)
-			}
-		} else {
-			setContentHeight(0)
 		}
 	}, [opened, children])
 
