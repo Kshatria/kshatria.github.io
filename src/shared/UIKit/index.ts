@@ -17,3 +17,4 @@ export {
 
 export { Loader } from './loader'
 export { RangeSlider, type RangeSliderProps } from './range-slider'
+export { Collapse, type CollapseProps } from './collapse'
